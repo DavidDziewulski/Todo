@@ -1,4 +1,279 @@
 @import './modules/reset'
 @import './modules/flex'
 @import './modules/mixin' 
+@import "./modules/mediaQuery"
 
+
+
+
+
+
+// Primary - Settings
+.container 
+    position: relative
+    width: 100%
+    min-height: 100vh
+    background: linear-gradient(#6f9fea, #c6c9ea)
+    padding: 8px
+    box-sizing: border-box 
+    +m('hidden')
+        filter: blur(4px)
+        pointer-events: none
+
+// App Setings 
+.wrapper
+    max-width: 800px 
+    margin: auto
+    padding: 8px 12px
+    background: linear-gradient(#337aea, #fff)
+    border-radius: 8px
+    text-align: center    
+
+// ------------Button-----
+.button
+    width: 60px
+    height: 60px
+    padding: 5px
+    border: none
+    border-radius: 50%
+    background: white
+    color:  #1b76d7
+    box-shadow: 0px 0px 5px #64a1e1
+    font-size: 50px
+    font-family: 'Comfortaa', cursive
+    font-weight: 900
+    cursor: pointer
+    &:active
+        border: 1px solid #1b76d7
+
+
+    +m('form')
+        margin: 12px 0 12px
+        font-size: 16px
+        
+    +m('cancel')
+        position: absolute
+        top: -20px
+        right: -20px
+        width: 50px
+        height: 50px
+        border-radius: 30px
+        color: red
+        font-size: 20px
+        
+        &:active
+            border: none
+            background-color: #a4a6aa
+        
+    
+// App Navigation   
+.nav
+    position: relative
+    width: 100%
+    +e('box')
+        display: block
+    +e('icon')
+        position: absolute
+        top: 6px
+        left: 20%
+        color: #ffffff
+        font-size: 20px
+        +for-small-tablets
+            left: 32%
+    +e('input-search')
+        width: 100%
+        height: 100%
+        padding: 5px
+        border: none
+        border-radius: 120px
+        background-color: #6f9fea
+        color: #ffffff
+        text-align: center
+        font-size: 18px
+        font-weight: 400
+        font-family: Arial, Helvetica, sans-serif
+        cursor: pointer
+        &:focus
+                box-shadow: 0px 0px 3px 0px blue     
+// App Header 
+.header
+    +flexbox
+    +justify-content(space-between)
+    +align-items(flex-end)
+    margin: 24px 0
+    padding: 0 8px
+        
+  
+    +e('day-number')
+        color: white
+        font-size: 56px  
+        font-family: 'Comfortaa', cursive  
+        text-shadow: 0px 0px 2px  black
+    +e('box')
+        +flexbox
+        +flex-direction(column)
+
+    +e('month')
+        padding: 4px 0
+        color: white
+        font-size: 34px
+        font-family: 'Comfortaa', cursive
+    +e('year') 
+        text-align: left
+        color: white
+        font-size: 24px
+    +e('day')
+        color: white
+        font-size: 18px
+        font-family: 'Comfortaa', cursive
+
+         
+// App Content - Conteiner for (windows - Task)
+.content
+    +flexbox
+    +flex-direction(column)
+    width: 100%
+    margin: 24px 0
+    background-color: white
+    border-radius: 4px
+    +m('hidden')
+        display: none
+// 
+//   ( Window- Task )
+.task
+    overflow: hidden
+    position: relative
+    +flexbox
+    +flex-direction(column)
+    justify-content: space-between
+    align-items: baseline
+    // width: calc(100% - 16px)
+    min-height: 20vh
+    margin: 8px 
+    padding: 16px
+    border-left: 3px solid red
+    border-radius: 3px
+    box-shadow: 0px 0px 6px #60a1e6 
+    text-align: left
+   
+    +m('complited') 
+        border-left: 3px solid #3cbd3c
+    +e('title')
+        max-width: 90%
+        font-size: 24px
+        font-family: 'Comfortaa', cursive
+        font-weight: bold
+        word-wrap: break-word
+        
+    +e('description')
+        max-width: 90%
+        margin: 24px 0 
+        line-height: 24px
+        text-align: initial
+        font-size: 16px
+        font-family: 'Comfortaa', cursive
+        word-wrap: break-word
+    +e('check-label')
+        position: absolute
+        top: -20px
+        right: -20px
+        width: 50px
+        height: 50px
+        padding: 5px
+        background-color: #e4e6ea
+        border-radius: 30px
+        cursor: pointer
+        &:active
+            
+            background-color: #a4a6aa
+
+        +m('done')
+            background-color: #4fa7f4
+        +m('remove')
+            top: calc(100% - 32px)
+            right: -20px
+          
+               
+                
+                
+    +e('check-input')
+        display: none
+       
+    +e('check-icon')
+        position: absolute
+        top: 25px
+        right: 23px
+        color: white
+        font-size: 17px
+        +m('remove')
+            top: 10px
+            right: 25px
+            color: red
+            font-size: 20px
+    +e('time')
+        
+        
+        font-size: 18px
+        font-family: 'Comfortaa', cursive
+        font-weight: bold
+        color: orange
+.text-done
+    text-decoration: line-through       
+
+// FORM ( Add Task For App)
+.form
+    overflow: hidden
+    position: fixed
+    top: 50%
+    left: 50%
+    +flexbox
+    +flex-direction(column)
+    justify-content: space-around
+    align-items: center
+    transform: translate(calc(-50% - 8px), calc(-50% - 8px))
+    min-height: 80vh
+    width: calc(100% - 16px)
+    max-width: 700px
+    margin: 8px
+    background-color: #3d69d2
+    border-radius: 5px 
+    +m('hidden')
+        display: none 
+    +e('box')
+        +flexbox
+        +flex-direction(column)
+        align-items: center
+        width: 80%
+        text-align: center
+    +e('label')
+        
+        cursor: pointer
+    +e('title')
+        margin: 12px 0
+        color: white
+        font-size: 24px  
+        font-family: 'Comfortaa', cursive 
+        text-shadow: 1px 1px 3px  black
+    +e('input')
+        width: 80% 
+        padding: 4px
+        border: none
+        cursor: pointer
+        text-align: center
+        font-size: 14px
+       
+        &:focus
+            box-shadow: 0px 0px 3px 0px blue  
+    +e('textarea')
+        width: 80%
+        padding: 4px
+        border: none
+        resize: none
+        cursor: pointer
+        font-size: 14px  
+        font-family: 'Comfortaa', cursive 
+    +e('icon-button')   
+        position: absolute
+        left: 12px
+        top: 24px
+        cursor: pointer

@@ -6,9 +6,10 @@ When you want to add icon you have to write this line below
     dom.watch() ;
  */
 import { library, dom } from '@fortawesome/fontawesome-svg-core';
-import { faCheck } from "@fortawesome/free-solid-svg-icons/faCheck";
+import { faSearch  } from "@fortawesome/free-solid-svg-icons/faSearch";
 import { faTimes } from "@fortawesome/free-solid-svg-icons/faTimes";
-library.add(faCheck,faTimes );
+import { faCheck} from "@fortawesome/free-solid-svg-icons/faCheck";
+library.add(faSearch, faTimes,faCheck);
 dom.watch() ;
 
 import './js/main.js';

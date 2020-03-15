@@ -1,0 +1,29 @@
+//  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+//  ##Screen = B/w 481px to 767px
+=for-small-tablets
+  @media (min-width: 481px)
+    @content
+
+//  ##Device = Tablets, Ipads (landscape)
+//  ##Screen = B/w 768px to 1024px
+=for-tablets-ipads-landscape
+  @media (min-width: 768px) and (orientation: landscape)
+    @content
+
+//  ##Device = Tablets, Ipads (portrait)
+//  ##Screen = B/w 768px to 1024px
+=for-tablets-ipads-portrait
+  @media (min-width: 768px)
+    @content
+
+=for-all-mobiles
+  @media (max-width: 1024px)
+    @content
+    
+=for-all-desktops
+  @media (min-width: 1025px)
+    @content
+
+=for-desktops
+  @media (min-width: 1281px)
+    @content

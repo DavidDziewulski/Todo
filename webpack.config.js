@@ -15,7 +15,7 @@ module.exports = {
     './src/app.js' 
   ],
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'docs'),
     filename: 'js/bundle.js'
   },
   devtool: "source-map",
@@ -52,7 +52,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/app.html'
   }),
-    new CleanWebpackPlugin('dist', {} ),
+    new CleanWebpackPlugin('docs', {} ),
     new MiniCssExtractPlugin({
       filename: 'css/bundle.css',
     }),
