@@ -165,8 +165,6 @@ const saveNote = function (notes) {
         // Remove Task
         taskRemoveInput.addEventListener('click',function(){
           removeTodo(e.id)
-          
-         
           saveNote(notes);
           createTask(notes,rendering);
         })
