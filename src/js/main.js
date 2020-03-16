@@ -1,11 +1,9 @@
 
-
 // Function save our notes in Local Storage and change Object to 'String'
 const saveNote = function (notes) {
   
     localStorage.setItem('notes', JSON.stringify(notes))
   };
-  
   
   // Function Changes our notes to an object and return array
   const getSavedNotes= function () {
@@ -13,41 +11,30 @@ const saveNote = function (notes) {
   
     const notesJSON = localStorage.getItem('notes')
   
-    if (notesJSON !== null) {
-        return JSON.parse(notesJSON)
-    } else {
-        return []
-    }
+    if (notesJSON) {
+      return JSON.parse(notesJSON);
+      }
+        return [];
+    
   };
-  
-  
   
   //Function Remove Task 
   const removeTodo = function(id){
     const remove = notes.findIndex(function(note){
         return note.id === id
     })
-    
     if(remove > -1){
       notes.splice(remove,1)
-        
-       
     }
   };
-  
   // Function ADD Border Done 
   const doneTodo= function(e){
-    !e.done ? e.done = true : e.done = false;
-    
+    e.done = !e.done
   };
-  
-  
-  
-  
   
   // Function CreatTask - Container
   const createTask = function(note,rendering){
-  
+
       const renderNote = note.filter(function(e){
          return e.title.toLowerCase().includes(rendering.title.toLowerCase())
       });
@@ -186,7 +173,7 @@ const saveNote = function (notes) {
   const currentDate = function(){
     // Date - Day
   document.querySelector('.header__day-number').dateTime = moment().format("dddd,  Do YYYY,");
-  document.querySelector('.header__day-number').textContent= moment().format("D");
+  document.querySelector('.header__day-number').textContent= moment().format("Do ");
   
   // // Date - Month
   document.querySelector('.header__month').dateTime = moment().format("MMM YYYY")
@@ -202,7 +189,10 @@ const saveNote = function (notes) {
   };
   
   
-  
+
+
+
+
 // ------- Function-End 
   
   
@@ -219,8 +209,7 @@ createTask(notes,rendering);
 
 //   -----------  FORM -----------
 document.querySelector('.form').addEventListener('submit',function(e){
-    e.preventDefault();
-
+  e.preventDefault();
 
     
 // Add Data to notes. 
@@ -241,7 +230,8 @@ document.querySelector('.form').addEventListener('submit',function(e){
     e.target.description.value = null;
     e.target.time.value = null;
     createTask(notes,rendering);
-
+    document.querySelector('.form').classList.add('form--hidden');
+    document.querySelector('.container').classList.remove('container--hidden');
 });
 
 //   -----------  FORM - Cancle Task-----------

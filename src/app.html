@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -14,13 +14,13 @@
     <div class="container">
         <div class="wrapper">
 
-            <nav class="nav">
+            <div class="nav">
                 <label for="search" class="nav__box">
-                    <i class="fas fa-search nav__icon"></i>
-                    <input id="search" name="search" type="text" class="nav__input-search" placeholder="search"
-                        maxlength="10">
+                   <span aria-hidden="true" class="nav__icon"><i  class="fas fa-search "></i></span> 
+                    <input   id="search" name="search" type="text" class="nav__input-search" placeholder="Search  by Title"
+                        maxlength="10" >
                 </label>
-            </nav>
+            </div>
 
             <header class="header">
 
@@ -40,25 +40,25 @@
 
             </main>
 
-            <button id="create-task" class=" button">+</button>
+            <button id="create-task" type="button" class=" button">+</button>
 
 
 
         </div>
 
     </div>
-    <form class="form form--hidden">
+    <form  class="form form--hidden">
         <div class="form__box">
+            <p class="form__title">Title </p>
             <label for="title" class="form__label">
-                <p class="form__title">Title </p>
             </label>
             <input id="title" type="text" name="title" class="form__input" autofocus required>
 
 
         </div>
         <div class="form__box">
+            <p class="form__title">Description</p>
             <label for="description" class="form__label">
-                <p class="form__title">Description</p>
             </label>
 
             <textarea class="form__textarea" name="description" id="description" cols="30" rows="3" required></textarea>
@@ -66,10 +66,10 @@
 
         </div>
         <div class="form__box">
+            <p class="form__title">Time</p>
             <label for="time" class="form__label">
-                <p class="form__title">Time</p>
             </label>
-            <input id="time" type="time" name="time" class="form__input " required>
+            <input id="time" type="time"  name="time" class="form__input " >
 
 
         </div>
@@ -80,9 +80,9 @@
 
 
         <button class="button button--form" type="submit" name="add" id="add-task">Add Task</button>
-        <button id="cancel-task" type="button" class="button  button--cancel" name="cancel"><i
+        <button id="cancel-task" type="button" class="button  button--cancel" type="button" name="cancel"><i
             class="fas fa-times form__icon-button"></i></button>
-    </form>
+        </form>
     <!--  Library ID -->
     <script src="https://wzrd.in/standalone/uuid%2Fv4@latest"></script>
     <!--  Library Date Moment  -->

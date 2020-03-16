@@ -60,10 +60,15 @@
         border-radius: 30px
         color: red
         font-size: 20px
-        
         &:active
             border: none
             background-color: #a4a6aa
+        
+        +for-tablets-ipads-portrait
+            width: 55px
+            height: 55px
+            font-size: 25px
+
         
     
 // App Navigation   
@@ -74,12 +79,14 @@
         display: block
     +e('icon')
         position: absolute
-        top: 6px
+        top: 5px
         left: 20%
         color: #ffffff
         font-size: 20px
         +for-small-tablets
             left: 32%
+        +for-tablets-ipads-landscape
+            top: 7px
     +e('input-search')
         width: 100%
         height: 100%
@@ -89,12 +96,13 @@
         background-color: #6f9fea
         color: #ffffff
         text-align: center
-        font-size: 18px
+        font-size: 14px
         font-weight: 400
         font-family: Arial, Helvetica, sans-serif
-        cursor: pointer
         &:focus
-                box-shadow: 0px 0px 3px 0px blue     
+                box-shadow: 0px 0px 3px 0px blue  
+        +for-tablets-ipads-landscape
+            font-size: 21px   
 // App Header 
 .header
     +flexbox
@@ -106,9 +114,11 @@
   
     +e('day-number')
         color: white
-        font-size: 56px  
+        font-size: 36px  
         font-family: 'Comfortaa', cursive  
         text-shadow: 0px 0px 2px  black
+        +for-tablets-ipads-landscape
+            font-size: 52px
     +e('box')
         +flexbox
         +flex-direction(column)
@@ -116,16 +126,22 @@
     +e('month')
         padding: 4px 0
         color: white
-        font-size: 34px
+        font-size: 26px
         font-family: 'Comfortaa', cursive
+        +for-tablets-ipads-landscape
+            font-size: 34px
     +e('year') 
         text-align: left
         color: white
-        font-size: 24px
+        font-size: 19px
+        +for-tablets-ipads-landscape
+            font-size: 21px
     +e('day')
         color: white
-        font-size: 18px
+        font-size: 19px
         font-family: 'Comfortaa', cursive
+        +for-tablets-ipads-landscape
+            font-size: 21px
 
          
 // App Content - Conteiner for (windows - Task)
@@ -258,7 +274,6 @@
         width: 80% 
         padding: 4px
         border: none
-        cursor: pointer
         text-align: center
         font-size: 14px
        
@@ -269,7 +284,6 @@
         padding: 4px
         border: none
         resize: none
-        cursor: pointer
         font-size: 14px  
         font-family: 'Comfortaa', cursive 
     +e('icon-button')   
